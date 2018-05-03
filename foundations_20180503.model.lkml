@@ -1,3 +1,6 @@
+#
+
+
 connection: "events_ecommerce"
 
 include: "*.view" # include all the views
