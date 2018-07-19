@@ -1,6 +1,6 @@
 include: "*.view" # include all the views
 #include: "*.dashboard" # include all the lookml dashboards
-
+#
 ###### Model Level Settings ######
 connection: "events_ecommerce"
 
