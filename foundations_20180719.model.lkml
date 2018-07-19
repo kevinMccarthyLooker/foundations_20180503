@@ -1,11 +1,8 @@
-#
-
-
-connection: "events_ecommerce"
-
 include: "*.view" # include all the views
+#include: "*.dashboard" # include all the lookml dashboards
 
-include: "*.dashboard" # include all the dashboards
+###### Model Level Settings ######
+connection: "events_ecommerce"
 
 datagroup: training_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -13,11 +10,13 @@ datagroup: training_default_datagroup {
 }
 
 persist_with: training_default_datagroup
+#^^^^^^ Model Level Settings ^^^^^#
 
+###### Explore Definitions ######
 explore: users {}
 
 explore: order_items {
-  #To Do: Add distribution_centers join to this explore
+  #To Do: create a user_summary table (e.g. lifetime orders) and join to this explore
   description: "Information about orders including user information"
   join: users {
     type: left_outer
